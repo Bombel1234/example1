@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="content">
+                <div class="box-left">
+                    <p id="l-1"></p>
+                    <p id="l-2"></p>
+                    <p id="l-3"></p>
+                    <p id="l-4"></p>
+                </div>
+                <div class="box-center">
+                    <div class="box-top">
+                        <div>
+                            <div class="res-gora">
+                                <p id="t-1"></p>
+                                <p id="t-2"></p>
+                                <p id="t-3"></p>
+                            </div>
+                        </div>
+                        <p class="dodatkowy-elem"></p>
+                    </div>
+                    <div class="box-center-center">
+                        <div>
+                            <p>illosc skrzydel</p>
+                            <button onclick="count_skrzydla('1')" id="btn1">1</button>
+                            <button onclick="count_skrzydla('2')" id="btn2">2</button>
+                        </div>
+                        <div>
+                            <p>Sposob otwierania okna</p>
+                            <button onclick="sposob_open('rozw_uch')" id="btn3">Rozw-uchyl</button>
+                            <button onclick="sposob_open('rozw')" id="btn4">Rozwierne</button>
+                        </div>
+                        <div id="zawias">
+                            <p>strona zawiasow</p>
+                            <button onclick="strona_zawiasow('left')" id="btn5">lewa</button>
+                            <button onclick="strona_zawiasow('right')" id="btn6">prawa</button>
+                        </div>
+                        <div id="slup">
+                            <p>strona stlupka</p>
+                            <button onclick="slupek('left')" id="btn7">lewa</button>
+                            <button onclick="slupek('right')" id="btn8">prawa</button>
+                        </div>
+                        <div>
+                            <p>szerokosc skrzydla</p>
+                            <input type="number" id="inp1" value="900">
+                        </div>
+                        <div>
+                            <p>wysokosc skrzydla</p>
+                            <input type="number" id="inp2" value="2150">
+                        </div>
+                        <div id="klamka">
+                            <p>Klamka</p>
+                            <button class="btn9"></button>
+                            <button class="btn9"></button>
+                            <button class="btn9"></button>
+                            <button class="btn9"></button>
+                            <button class="btn9"></button>
+                            <button class="btn9"></button>
+                            <button class="btn9"></button>
+                        </div>
+                        <div>
+                            <p>poziomy zabiezpieczena okucia</p>
+                            <button onclick="click_button_standart()">Standart</button>
+                            <button>Er1</button>
+                            <button>Er2</button>
+                        </div>
+                    </div>
+                    <div class="box-bottom">
+                        <p id="b-1"></p>
+                        <p id="b-2"></p>
+                        <p id="b-3"></p>
+                    </div>
+                </div>
+                <div class="box-right">
+                    <p id="p-1"></p>
+                    <p id="p-2"></p>
+                    <p id="p-3"></p>
+                    <p id="p-4"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/standart.js"></script>
+</body>
+
+</html>
