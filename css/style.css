@@ -34,6 +34,11 @@ body{
     grid-template-rows: auto;
     text-align: center;
 }
+.btn9-sp{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-column-gap: 10px;
+}
 
 /* box-top center column */
 .box-top{
@@ -98,5 +103,10 @@ body{
     }
     #btn3{
         margin-bottom: 10px;
+    }
+    .btn9-sp{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+        row-gap: 10px;
     }
 }
