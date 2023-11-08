@@ -344,6 +344,9 @@ function func_zasuwnica(height, height_klamka, str_zaw) {
         alert('uwaga: niestandart-- func zasuwnica')
         delete_all_div()
         standart = ''
+        if (btn_standart.classList.contains('active')){
+            btn_standart.classList.remove('active')
+        }
     }
 }
 function func_gora(widht, spos_open) {
