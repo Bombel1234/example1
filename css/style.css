@@ -39,6 +39,10 @@ body{
     grid-template-columns: repeat(7, 1fr);
     grid-column-gap: 10px;
 }
+.btn-poz{
+    padding: 8px 14px;
+    
+}
 
 /* box-top center column */
 .box-top{
