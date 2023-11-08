@@ -56,7 +56,7 @@
                         </div>
                         <div>
                             <p>wysokosc skrzydla</p>
-                            <input type="number" id="inp2" value="2150">
+                            <input type="number" id="inp2" value="2150" onclick="input_click()">
                         </div>
                         <div id="klamka">
                             <p>Klamka</p>
@@ -72,9 +72,9 @@
                         </div>
                         <div>
                             <p style="margin-bottom: 10px;">poziomy zabiezpieczena okucia</p>
-                            <button class="btn-poz" onclick="click_button_standart()">Standart</button>
-                            <button class="btn-poz">Er1</button>
-                            <button class="btn-poz">Er2</button>
+                            <button id="btn_standart" class="btn-poz" onclick="click_button_standart()">Standart</button>
+                            <button id="btn_er1" class="btn-poz" onclick="click_button_er1()">Er1</button>
+                            <button id="btn_er2" class="btn-poz" onclick="click_button_er2()">Er2</button>
                         </div>
                     </div>
                     <div class="box-bottom">
