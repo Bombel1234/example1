@@ -341,7 +341,8 @@ function func_zasuwnica(height, height_klamka, str_zaw) {
         }
     }
     else {
-        alert('uwaga: niestandart')
+        alert('uwaga: niestandart-- func zasuwnica')
+        delete_all_div()
         standart = ''
     }
 }
@@ -429,7 +430,6 @@ function res_box_xx(widht, height, str_slupek, spos_open) {
 
 }
 function xx_plecy(height, str_slupek, spos_open) {
-
     if (height < 801) {
         if (str_slupek == 'left') {
             l1.innerText = ''
