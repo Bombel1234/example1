@@ -65,6 +65,16 @@ function count_skrzydla(count) {
             else if (one_or_two == '1'){
                 alert('wybierz wysokosc klamki')
                 delete_all_div()
+                for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
+                    const element = document.querySelectorAll('.btn9')[index];
+                    if (element.classList.contains('active')){
+                        element.classList.remove('active')
+                    }
+                    
+                }
+                if (btn_standart.classList.contains('active')){
+                    btn_standart.classList.remove('active')
+                }
             }
 
         }
@@ -187,7 +197,7 @@ document.querySelectorAll('.btn9').forEach(button => {
         }
         let inp2 = document.getElementById('inp2').value
         let inp1 = document.getElementById('inp1').value
-        if (start == 'start') {
+        if (start == 'start' && one_or_two == '2') {
             func_plecy(spos_open, inp2, str_zaw)
             func_zasuwnica(inp2, h_kl, str_zaw)
             func_gora(inp1, spos_open)
@@ -202,7 +212,21 @@ document.querySelectorAll('.btn9').forEach(button => {
 });
 
 
+let btn_standart = document.getElementById('btn_standart')
+let btn_er1 = document.getElementById('btn_er1')
+let btn_er2 = document.getElementById('btn_er2')
+function input_click(){
+    if (btn_standart.classList.contains('active')){
+        btn_standart.classList.remove('active')
+    }
+}
+
 function click_button_standart() {
+    btn_standart.classList.add('active')
+    if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')){
+        btn_er1.classList.remove('active')
+        btn_er2.classList.remove('active')
+    }
     start = 'start'
     let inp1 = document.getElementById('inp1').value
     let inp2 = document.getElementById('inp2').value
@@ -218,6 +242,7 @@ function click_button_standart() {
         }
         else {
             alert('wyberi wysotu klamky')
+            btn_standart.classList.remove('active')
         }
     }
     else if (count_skr == '2' && inp1 != '' && inp2 != '') {
@@ -232,6 +257,19 @@ function click_button_standart() {
         alert('wwedit wymiarun skrzydla')
     }
 }
-
+function click_button_er1(){
+    btn_er1.classList.add('active')
+    if (btn_standart.classList.contains('active') || btn_er2.classList.contains('active')){
+        btn_standart.classList.remove('active')
+        btn_er2.classList.remove('active')
+    }
+}
+function click_button_er2(){
+    btn_er2.classList.add('active')
+    if (btn_standart.classList.contains('active') || btn_er1.classList.contains('active')){
+        btn_er1.classList.remove('active')
+        btn_standart.classList.remove('active')
+    }
+}
 
 
