@@ -12,7 +12,7 @@ let str_zaw = 'left'
 let str_slupek = 'left'
 let h_kl = ''
 let start = 'stop'
-let two = '5'
+let one_or_two = ''
 
 let b1 = document.getElementById("btn1")
 let b2 = document.getElementById("btn2")
@@ -45,6 +45,7 @@ window.addEventListener('load', () => {
 
 function count_skrzydla(count) {
     count_skr = count
+    one_or_two = count
     let inp1 = document.getElementById('inp1').value
     let inp2 = document.getElementById('inp2').value
     if (count_skr == '1') {
@@ -54,19 +55,23 @@ function count_skrzydla(count) {
         zaw.style.display = 'block'
         stl.style.display = 'none'
         if (start == 'start') {
-            if (two == '5') {
+            if (one_or_two == '2') {
                 func_plecy(spos_open, inp2, str_zaw)
                 func_zasuwnica(inp2, h_kl, str_zaw)
                 func_gora(inp1, spos_open)
                 func_dol(inp1)
+                
             }
-            else{
-                two = '5'
+            else if (one_or_two == '1'){
+                alert('wybierz wysokosc klamki')
+                delete_all_div()
             }
 
         }
+
     }
     else if (count_skr == '2') {
+        one_or_two = '2'
         b2.style.backgroundColor = 'red'
         b1.style.backgroundColor = 'blueviolet'
         klamka.style.display = 'none'
@@ -205,10 +210,7 @@ function click_button_standart() {
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
-                if (two == '5') {
-                    res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
-                }
-
+                res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
             }
             else {
                 alert('nie mamy takich wymiarow')
@@ -219,7 +221,6 @@ function click_button_standart() {
         }
     }
     else if (count_skr == '2' && inp1 != '' && inp2 != '') {
-        two = 8
         if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
             res_box_xx(inp1, inp2, str_slupek, spos_open)
         }
