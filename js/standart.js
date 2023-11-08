@@ -325,7 +325,7 @@ function func_zasuwnica(height, height_klamka, str_zaw) {
             l4.innerText = ''
         }
     }
-    else if (height >= 2001 && height <= 2600 && height_klamka == 1020) {
+    else if (height >= 2001 && height <= 2800 && height_klamka == 1020) {
         standart = 'ok'
         if (str_zaw == 'left') {
             p1.innerText = '1770'
