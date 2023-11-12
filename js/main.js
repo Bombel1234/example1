@@ -110,6 +110,7 @@ function count_skrzydla(count) {
                 if (one_or_two == '2') {
                     func_zasuwnica(inp2, h_kl, str_zaw)
                     func_plecy_er1(inp2, str_zaw)
+                    func_dol_er1(inp1)
                     // func_plecy(spos_open, inp2, str_zaw)
                     // func_zasuwnica(inp2, h_kl, str_zaw)
                     // func_gora(inp1, spos_open)
@@ -246,6 +247,7 @@ function sposob_open(params) {
             if (start == 'start') {
                 func_zasuwnica(inp2, h_kl, str_zaw)
                 func_plecy_er1(inp2, str_zaw)
+                func_dol_er1(inp1)
                 // func_plecy(spos_open, inp2, str_zaw)
                 // func_zasuwnica(inp2, h_kl, str_zaw)
                 // func_gora(inp1, spos_open)
@@ -317,6 +319,7 @@ function sposob_open(params) {
 }
 function strona_zawiasow(params) {
     let inp2 = document.getElementById('inp2').value
+    let inp1 = document.getElementById('inp1').value
     str_zaw = params
     if (poziom_okucia == 'standart') {
         if (start == 'start') {
@@ -337,6 +340,7 @@ function strona_zawiasow(params) {
         if (start == 'start') {
             func_zasuwnica(inp2, h_kl, str_zaw)
             func_plecy_er1(inp2, str_zaw)
+            func_dol_er1(inp1)
             // func_plecy(spos_open, inp2, str_zaw)
             // func_zasuwnica(inp2, h_kl, str_zaw)
         }
@@ -394,7 +398,6 @@ function slupek(value_slupek) {
         }
     }
     else if (poziom_okucia == 'er1') {
-        console.log('okuwamy er1')
         if (str_slupek == 'left') {
             b7.style.backgroundColor = 'red'
             b8.style.backgroundColor = 'blueviolet'
@@ -535,6 +538,7 @@ function click_button_er1() {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
                 func_zasuwnica(inp2, h_kl, str_zaw)
                 func_plecy_er1(inp2, str_zaw)
+                func_dol_er1(inp1)
             }
             else {
                 alert('nie mamy takich wymiarow')
