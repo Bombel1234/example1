@@ -99,7 +99,7 @@ function count_skrzydla(count) {
         }
     }
     else if (poziom_okucia == 'er1') {
-        
+
         if (count_skr == '1') {
             b1.style.backgroundColor = 'red'
             b2.style.backgroundColor = 'blueviolet'
@@ -109,12 +109,12 @@ function count_skrzydla(count) {
             if (start == 'start') {
                 if (one_or_two == '2') {
                     func_zasuwnica(inp2, h_kl, str_zaw)
-                    func_plecy_er1(inp2, str_zaw)
-                    func_dol_er1(inp1)
-                    // func_plecy(spos_open, inp2, str_zaw)
-                    // func_zasuwnica(inp2, h_kl, str_zaw)
-                    // func_gora(inp1, spos_open)
-                    // func_dol(inp1)
+                    if (standart == 'ok') {
+                        func_plecy_er1(inp2, str_zaw)
+                        func_dol_er1(inp1)
+                        func_gora_er1(inp1, spos_open)
+                    }
+
 
                 }
                 else if (one_or_two == '1') {
@@ -143,11 +143,7 @@ function count_skrzydla(count) {
             zaw.style.display = 'none'
             stl.style.display = 'block'
             if (start == 'start') {
-                // xx_docisk(inp2, str_slupek, spos_open)
-                // xx_plecy(inp2, str_slupek)
-                // xx_top_rozw_uch(inp1, str_slupek)
-                // xx_slupek_rozw_uch(inp1, str_slupek)
-                // xx_top_bottom_rozw(inp1, spos_open)
+                //function body
             }
         }
     }
@@ -246,12 +242,12 @@ function sposob_open(params) {
         if (count_skr == '1') {
             if (start == 'start') {
                 func_zasuwnica(inp2, h_kl, str_zaw)
-                func_plecy_er1(inp2, str_zaw)
-                func_dol_er1(inp1)
-                // func_plecy(spos_open, inp2, str_zaw)
-                // func_zasuwnica(inp2, h_kl, str_zaw)
-                // func_gora(inp1, spos_open)
-                // func_dol(inp1)
+                if (standart == 'ok') {
+                    func_plecy_er1(inp2, str_zaw)
+                    func_dol_er1(inp1)
+                    func_gora_er1(inp1, spos_open)
+                }
+
             }
         }
         else if (count_skr == '2') {
@@ -339,10 +335,13 @@ function strona_zawiasow(params) {
     else if (poziom_okucia == 'er1') {
         if (start == 'start') {
             func_zasuwnica(inp2, h_kl, str_zaw)
-            func_plecy_er1(inp2, str_zaw)
-            func_dol_er1(inp1)
-            // func_plecy(spos_open, inp2, str_zaw)
-            // func_zasuwnica(inp2, h_kl, str_zaw)
+            if (standart == 'ok') {
+                func_plecy_er1(inp2, str_zaw)
+                func_dol_er1(inp1)
+                func_gora_er1(inp1, spos_open)
+            }
+
+
         }
 
         if (str_zaw == 'left') {
@@ -354,7 +353,7 @@ function strona_zawiasow(params) {
             b5.style.backgroundColor = 'blueviolet'
         }
     }
-    else if (poziom_okucia == 'er2'){
+    else if (poziom_okucia == 'er2') {
         if (start == 'start') {
             // func_plecy(spos_open, inp2, str_zaw)
             // func_zasuwnica(inp2, h_kl, str_zaw)
@@ -448,6 +447,8 @@ function slupek(value_slupek) {
 document.querySelectorAll('.btn9').forEach(button => {
     button.addEventListener('click', function (param) {
         h_kl = button.textContent
+        btn_standart.classList.remove('active')
+        btn_er1.classList.remove('active')
         for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
             const element = document.querySelectorAll('.btn9')[index];
             if (element.classList.contains('active')) {
@@ -479,7 +480,7 @@ function input_click() {
     if (btn_standart.classList.contains('active')) {
         btn_standart.classList.remove('active')
     }
-    else if (btn_er1.classList.contains('active')){
+    else if (btn_er1.classList.contains('active')) {
         btn_er1.classList.remove('active')
     }
 }
@@ -537,8 +538,12 @@ function click_button_er1() {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
                 func_zasuwnica(inp2, h_kl, str_zaw)
-                func_plecy_er1(inp2, str_zaw)
-                func_dol_er1(inp1)
+                if (standart == 'ok') {
+                    func_plecy_er1(inp2, str_zaw)
+                    func_dol_er1(inp1)
+                    func_gora_er1(inp1, spos_open)
+                }
+
             }
             else {
                 alert('nie mamy takich wymiarow')
@@ -575,7 +580,7 @@ function click_button_er2() {
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
-               // res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
+                // res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
             }
             else {
                 alert('nie mamy takich wymiarow')
