@@ -226,6 +226,7 @@ function click_button_standart() {
     if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')){
         btn_er1.classList.remove('active')
         btn_er2.classList.remove('active')
+        
     }
     start = 'start'
     let inp1 = document.getElementById('inp1').value
