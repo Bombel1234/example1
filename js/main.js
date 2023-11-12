@@ -99,7 +99,7 @@ function count_skrzydla(count) {
         }
     }
     else if (poziom_okucia == 'er1') {
-        console.log('okuwamy er1')
+        
         if (count_skr == '1') {
             b1.style.backgroundColor = 'red'
             b2.style.backgroundColor = 'blueviolet'
@@ -242,7 +242,6 @@ function sposob_open(params) {
         }
     }
     else if (poziom_okucia == 'er1') {
-        console.log('okuwamy er1')
         if (count_skr == '1') {
             if (start == 'start') {
                 func_zasuwnica(inp2, h_kl, str_zaw)
@@ -280,7 +279,6 @@ function sposob_open(params) {
         }
     }
     else if (poziom_okucia == 'er2') {
-        console.log('okuwamy er2')
         if (count_skr == '1') {
             if (start == 'start') {
                 // func_plecy(spos_open, inp2, str_zaw)
@@ -336,7 +334,6 @@ function strona_zawiasow(params) {
         }
     }
     else if (poziom_okucia == 'er1') {
-        console.log('okuwamy er1')
         if (start == 'start') {
             func_zasuwnica(inp2, h_kl, str_zaw)
             func_plecy_er1(inp2, str_zaw)
@@ -353,8 +350,7 @@ function strona_zawiasow(params) {
             b5.style.backgroundColor = 'blueviolet'
         }
     }
-    else if (poziom_okucia == 'er2') {
-        console.log('okuwamy er2')
+    else if (poziom_okucia == 'er2'){
         if (start == 'start') {
             // func_plecy(spos_open, inp2, str_zaw)
             // func_zasuwnica(inp2, h_kl, str_zaw)
