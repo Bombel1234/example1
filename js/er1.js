@@ -132,3 +132,43 @@ function func_dol_er1(widht) {
         bot3.innerText = '600 400'
     }
 }
+function func_gora_er1(widht, spos_open){
+    if (spos_open == 'rozw_uch'){
+        func_gora(widht, spos_open)
+    }
+    else if(spos_open == 'rozw'){
+        func_gora_er1_rozw(widht)
+    }
+}
+function func_gora_er1_rozw(widht){
+    if (widht < 400) {
+        t1.innerText = ''
+        t2.innerText = ''
+        t3.innerText = ''
+    }
+    else if (widht >= 400 && widht < 601) {
+        t1.innerText = '200'
+        t2.innerText = ''
+        t3.innerText = '200'
+    }
+    else if (widht >= 601 && widht < 801) {
+        t1.innerText = '400'
+        t2.innerText = ''
+        t3.innerText = '400'
+    }
+    else if (widht >= 801 && widht < 1001) {
+        t1.innerText = '600'
+        t2.innerText = ''
+        t3.innerText = '600'
+    }
+    else if (widht >= 1001 && widht < 1201) {
+        t1.innerText = '600 200'
+        t2.innerText = ''
+        t3.innerText = '600 200'
+    }
+    else if (widht >= 1201 && widht < 1601) {
+        t1.innerText = '600 400'
+        t2.innerText = ''
+        t3.innerText = '600 400'
+    }
+}
