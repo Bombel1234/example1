@@ -108,6 +108,8 @@ function count_skrzydla(count) {
             stl.style.display = 'none'
             if (start == 'start') {
                 if (one_or_two == '2') {
+                    func_zasuwnica(inp2, h_kl, str_zaw)
+                    func_plecy_er1(inp2, str_zaw)
                     // func_plecy(spos_open, inp2, str_zaw)
                     // func_zasuwnica(inp2, h_kl, str_zaw)
                     // func_gora(inp1, spos_open)
@@ -243,6 +245,8 @@ function sposob_open(params) {
         console.log('okuwamy er1')
         if (count_skr == '1') {
             if (start == 'start') {
+                func_zasuwnica(inp2, h_kl, str_zaw)
+                func_plecy_er1(inp2, str_zaw)
                 // func_plecy(spos_open, inp2, str_zaw)
                 // func_zasuwnica(inp2, h_kl, str_zaw)
                 // func_gora(inp1, spos_open)
@@ -334,6 +338,8 @@ function strona_zawiasow(params) {
     else if (poziom_okucia == 'er1') {
         console.log('okuwamy er1')
         if (start == 'start') {
+            func_zasuwnica(inp2, h_kl, str_zaw)
+            func_plecy_er1(inp2, str_zaw)
             // func_plecy(spos_open, inp2, str_zaw)
             // func_zasuwnica(inp2, h_kl, str_zaw)
         }
@@ -474,11 +480,13 @@ function input_click() {
     if (btn_standart.classList.contains('active')) {
         btn_standart.classList.remove('active')
     }
+    else if (btn_er1.classList.contains('active')){
+        btn_er1.classList.remove('active')
+    }
 }
 
 function click_button_standart() {
     poziom_okucia = 'standart'
-    console.log(poziom_okucia)
     btn_standart.classList.add('active')
     if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')) {
         btn_er1.classList.remove('active')
@@ -517,7 +525,6 @@ function click_button_standart() {
 }
 function click_button_er1() {
     poziom_okucia = 'er1'
-    console.log(poziom_okucia)
     btn_er1.classList.add('active')
     if (btn_standart.classList.contains('active') || btn_er2.classList.contains('active')) {
         btn_standart.classList.remove('active')
@@ -530,7 +537,8 @@ function click_button_er1() {
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
-                //res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
+                func_zasuwnica(inp2, h_kl, str_zaw)
+                func_plecy_er1(inp2, str_zaw)
             }
             else {
                 alert('nie mamy takich wymiarow')
@@ -555,7 +563,6 @@ function click_button_er1() {
 }
 function click_button_er2() {
     poziom_okucia = 'er2'
-    console.log(poziom_okucia)
     btn_er2.classList.add('active')
     if (btn_standart.classList.contains('active') || btn_er1.classList.contains('active')) {
         btn_er1.classList.remove('active')
