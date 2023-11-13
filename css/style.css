@@ -53,6 +53,7 @@ body{
 .res-gora{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    color: blue;
     
 }
 /* box-bottom center column */
@@ -91,6 +92,12 @@ body{
     text-align: center;
     margin-top: 30px;
     font-size: 70px; 
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
 }
 @media(max-width: 800px){
     .box-right{
