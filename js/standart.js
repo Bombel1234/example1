@@ -358,7 +358,6 @@ function delete_active_button(){
 }
 function func_gora(widht, spos_open) {
     if (spos_open == 'rozw_uch') {
-
         if (widht < 801) {
             t2.innerText = ''
             t1.innerText = ''
