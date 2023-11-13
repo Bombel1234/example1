@@ -474,6 +474,7 @@ function input_click() {
 }
 
 function click_button_standart() {
+    
     poziom_okucia = 'standart'
     btn_standart.classList.add('active')
     if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')) {
@@ -484,7 +485,7 @@ function click_button_standart() {
     start = 'start'
     let inp1 = document.getElementById('inp1').value
     let inp2 = document.getElementById('inp2').value
-
+    
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
