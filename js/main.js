@@ -41,6 +41,7 @@ window.addEventListener('load', () => {
         const element = document.querySelectorAll('.btn9')[index];
         element.innerHTML = data.h_klamka[index]
     }
+    
 
 })
 
@@ -308,6 +309,7 @@ function sposob_open(params) {
 
 }
 function strona_zawiasow(params) {
+    
     let inp2 = document.getElementById('inp2').value
     let inp1 = document.getElementById('inp1').value
     str_zaw = params
@@ -448,6 +450,7 @@ document.querySelectorAll('.btn9').forEach(button => {
             func_zasuwnica(inp2, h_kl, str_zaw)
             func_gora(inp1, spos_open)
             func_dol(inp1)
+
         }
         if (standart != 'ok') {
             delete_all_div()
@@ -588,5 +591,48 @@ function click_button_er2() {
         alert('wwedit wymiarun skrzydla')
     }
 }
+function add_style(poziom_okucia, count_skr, str_zaw, str_slupek) {
+    if (poziom_okucia == 'standart') {
+        if (count_skr == '1') {
+            if (spos_open == 'rozw_uch') {
+                if (str_zaw == 'left') {
+                    if (box_left.classList.contains('green')) {
+                        box_left.classList.remove('green')
+                        box_left.classList.add('red')
+                    }
 
+                }
+                else if (str_zaw == 'right') {
+                    if (box_right.classList.contains('green')) {
+                        box_right.classList.remove('green')
+                        box_right.classList.add('red')
+                    }
+                }
+            }
+            if (spos_open == 'rozw'){
+                
+            }
+
+        }
+        else if (count_skr == '2') {
+            if (str_slupek == 'left') {
+                if (box_right.classList.contains('green')) {
+                    box_right.classList.remove('green')
+                    box_right.classList.add('red')
+                }
+                box_left.classList.remove('red')
+                box_left.classList.add('green')
+            }
+            else if (str_slupek == 'right') {
+                if (box_left.classList.contains('green')) {
+                    box_left.classList.remove('green')
+                    box_left.classList.add('red')
+                }
+                box_right.classList.remove('red')
+                box_right.classList.add('green')
+            }
+        }
+    }
+
+}
 
