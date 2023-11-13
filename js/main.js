@@ -143,7 +143,9 @@ function count_skrzydla(count) {
             zaw.style.display = 'none'
             stl.style.display = 'block'
             if (start == 'start') {
-                //function body
+                res_box_left_right_er1(inp2)
+                func_dol_er1(inp1, count_skr)
+                func_gora_er1_rozw(inp1, count_skr)
             }
         }
     }
@@ -252,17 +254,9 @@ function sposob_open(params) {
         }
         else if (count_skr == '2') {
             if (start == 'start') {
-                if (spos_open == 'rozw_uch') {
-                    // xx_plecy(inp2, str_slupek, spos_open)
-                    // xx_docisk(inp2, str_slupek, spos_open)
-                    // xx_top_rozw_uch(inp1, str_slupek)
-                    // xx_slupek_rozw_uch(inp1, str_slupek)
-                    // xx_top_bottom_rozw(inp1, spos_open)
-                }
-                else {
-                    // xx_docisk(inp2, str_slupek, spos_open)
-                    // xx_top_bottom_rozw(inp1, spos_open)
-                }
+                res_box_left_right_er1(inp2)
+                func_dol_er1(inp1, count_skr)
+                func_gora_er1_rozw(inp1, count_skr)
             }
         }
 
@@ -340,8 +334,6 @@ function strona_zawiasow(params) {
                 func_dol_er1(inp1)
                 func_gora_er1(inp1, spos_open)
             }
-
-
         }
 
         if (str_zaw == 'left') {
@@ -406,16 +398,9 @@ function slupek(value_slupek) {
             b7.style.backgroundColor = 'blueviolet'
         }
         if (start == 'start') {
-            if (spos_open == 'rozw_uch') {
-                // xx_plecy(inp2, str_slupek)
-                // xx_top_rozw_uch(inp1, str_slupek)
-                // xx_slupek_rozw_uch(inp1, str_slupek)
-                // xx_top_bottom_rozw(inp1, spos_open)
-            }
-            //xx_docisk(inp2, str_slupek, spos_open)
-            if (spos_open == 'rozw') {
-                //xx_top_bottom_rozw(inp1, spos_open)
-            }
+            res_box_left_right_er1(inp2)
+            func_dol_er1(inp1, count_skr)
+            func_gora_er1_rozw(inp1, count_skr)
         }
     }
     else if (poziom_okucia == 'er2') {
@@ -540,8 +525,8 @@ function click_button_er1() {
                 func_zasuwnica(inp2, h_kl, str_zaw)
                 if (standart == 'ok') {
                     func_plecy_er1(inp2, str_zaw)
-                    func_dol_er1(inp1)
-                    func_gora_er1(inp1, spos_open)
+                    func_dol_er1(inp1, count_skr)
+                    func_gora_er1(inp1, spos_open, count_skr)
                 }
 
             }
@@ -556,7 +541,7 @@ function click_button_er1() {
     }
     else if (count_skr == '2' && inp1 != '' && inp2 != '') {
         if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
-            //res_box_xx(inp1, inp2, str_slupek, spos_open)
+            res_box_xx_er1(inp1, inp2, str_slupek, spos_open, count_skr)
         }
         else {
             console.log('nie mamy takich wymiarow')
