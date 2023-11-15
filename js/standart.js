@@ -173,6 +173,7 @@ function func_plecy(spos_open, height, str_zaw) {
 }
 
 function func_zasuwnica(height, height_klamka, str_zaw) {
+
     if (height >= 280 && height <= 570 && height_klamka == 140) {
         standart = 'ok'
         if (str_zaw == 'left') {
@@ -345,14 +346,14 @@ function func_zasuwnica(height, height_klamka, str_zaw) {
         delete_all_div()
         standart = ''
         delete_active_button()
-        
+
     }
 }
-function delete_active_button(){
-    if (btn_standart.classList.contains('active')){
+function delete_active_button() {
+    if (btn_standart.classList.contains('active')) {
         btn_standart.classList.remove('active')
     }
-    else if (btn_er1.classList.contains('active')){
+    else if (btn_er1.classList.contains('active')) {
         btn_er1.classList.remove('active')
     }
 }
@@ -430,12 +431,12 @@ function res_box_xx(widht, height, str_slupek, spos_open) {
         xx_slupek_rozw_uch(widht, str_slupek)
         xx_top_bottom_rozw(widht, spos_open)
     }
-    
+
     xx_docisk(height, str_slupek, spos_open)
-    if (spos_open == 'rozw'){
+    if (spos_open == 'rozw') {
         xx_top_bottom_rozw(widht, spos_open)
     }
-    
+
 
 }
 function xx_plecy(height, str_slupek, spos_open) {
@@ -612,145 +613,145 @@ function xx_docisk(height, str_slupek, spos_open) {
         }
     }
 }
-function xx_top_rozw_uch(widht, str_slupek){
-    if (widht < 801){
-        if(str_slupek == 'left'){
+function xx_top_rozw_uch(widht, str_slupek) {
+    if (widht < 801) {
+        if (str_slupek == 'left') {
             t3.innerText = ''
             t2.innerText = ''
         }
-        else if(str_slupek == 'right'){
+        else if (str_slupek == 'right') {
             t1.innerText = ''
             t2.innerText = ''
         }
-    } 
-    else if(widht >= 801 && widht < 1001){
-        if (str_slupek == 'left'){
+    }
+    else if (widht >= 801 && widht < 1001) {
+        if (str_slupek == 'left') {
             t3.innerText = 'AX-600'
             t1.innerText = ''
             t2.innerText = ''
         }
-        else if(str_slupek == 'right'){
+        else if (str_slupek == 'right') {
             t1.innerText = 'AX-600'
             t3.innerText = ''
             t2.innerText = ''
         }
     }
-    else if (widht >= 1001){
-        if(str_slupek == 'left'){
+    else if (widht >= 1001) {
+        if (str_slupek == 'left') {
             t3.innerText = 'AX-750'
             t1.innerText = ''
             t2.innerText = ''
         }
-        else if(str_slupek == 'right'){
+        else if (str_slupek == 'right') {
             t1.innerText = 'AX-750'
             t3.innerText = ''
             t2.innerText = ''
         }
-    } 
-          
+    }
+
 }
 function xx_slupek_rozw_uch(widht, str_slupek) {
-    if (widht < 801){
-        if(str_slupek == 'left'){
+    if (widht < 801) {
+        if (str_slupek == 'left') {
             t1.innerText = ''
             t2.innerText = ''
         }
-        else if(str_slupek == 'right'){
+        else if (str_slupek == 'right') {
             t3.innerText = ''
             t2.innerText = ''
         }
     }
-    else if(widht >= 801 && widht < 1201){
-        if(str_slupek == 'left'){
+    else if (widht >= 801 && widht < 1201) {
+        if (str_slupek == 'left') {
             t1.innerText = '400'
             t2.innerText = ''
         }
-        else if(str_slupek == 'right'){
+        else if (str_slupek == 'right') {
             t3.innerText = '400'
             t2.innerText = ''
         }
     }
-    else if(widht >= 1201 && widht < 1401){
-        if(str_slupek == 'left'){
+    else if (widht >= 1201 && widht < 1401) {
+        if (str_slupek == 'left') {
             t1.innerText = '600'
             t2.innerText = ''
         }
-        else if(str_slupek == 'right'){
+        else if (str_slupek == 'right') {
             t3.innerText = '600'
             t2.innerText = ''
         }
     }
-    else if(widht >= 1401 && widht < 1601){
-        if(str_slupek == 'left'){
+    else if (widht >= 1401 && widht < 1601) {
+        if (str_slupek == 'left') {
             t1.innerText = '600 400'
             t2.innerText = ''
         }
-        else if(str_slupek == 'right'){
+        else if (str_slupek == 'right') {
             t3.innerText = '600 400'
             t2.innerText = ''
         }
     }
-    
+
 }
-function xx_top_bottom_rozw(widht, spos_open){
-    if (widht < 801){
-        if (spos_open == 'rozw_uch'){
+function xx_top_bottom_rozw(widht, spos_open) {
+    if (widht < 801) {
+        if (spos_open == 'rozw_uch') {
             bot1.innerText = ''
             bot3.innerText = ''
             bot2.innerText = ''
         }
-        else if(spos_open == 'rozw'){
+        else if (spos_open == 'rozw') {
             t1.innerText = ''
             t3.innerText = ''
             bot1.innerText = ''
             bot3.innerText = ''
             bot2.innerText = ''
         }
-        
+
     }
-    else if(widht >= 801 && widht < 1201){
-        if (spos_open == 'rozw_uch'){
+    else if (widht >= 801 && widht < 1201) {
+        if (spos_open == 'rozw_uch') {
             bot1.innerText = '400'
             bot3.innerText = '400'
             bot2.innerText = ''
         }
-        else if(spos_open == 'rozw'){
+        else if (spos_open == 'rozw') {
             t1.innerText = '400'
             t3.innerText = '400'
             bot1.innerText = '400'
             bot3.innerText = '400'
             bot2.innerText = ''
         }
-        
+
     }
-    else if(widht >= 1201 && widht < 1401){
-        if (spos_open == 'rozw_uch'){
+    else if (widht >= 1201 && widht < 1401) {
+        if (spos_open == 'rozw_uch') {
             bot1.innerText = '600'
             bot3.innerText = '600'
             bot2.innerText = ''
         }
-        else if(spos_open == 'rozw'){
+        else if (spos_open == 'rozw') {
             t1.innerText = '600'
             t3.innerText = '600'
             bot1.innerText = '600'
             bot3.innerText = '600'
             bot2.innerText = ''
         }
-        
+
     }
-    else if(widht >= 1401 && widht < 1601){
-        if (spos_open == 'rozw_uch'){
+    else if (widht >= 1401 && widht < 1601) {
+        if (spos_open == 'rozw_uch') {
             bot1.innerText = '600 400'
             bot3.innerText = '600 400'
             bot2.innerText = ''
         }
-        else if(spos_open == 'rozw'){
+        else if (spos_open == 'rozw') {
             t1.innerText = '600 400'
             t3.innerText = '600 400'
             bot1.innerText = '600 400'
             bot3.innerText = '600 400'
             bot2.innerText = ''
         }
-        
+
     }
 }
