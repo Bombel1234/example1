@@ -52,7 +52,6 @@ window.addEventListener('load', () => {
 function count_skrzydla(count) {
     count_skr = count
     one_or_two = count
-   
     if (count_skr == '1') {
         b1.style.backgroundColor = 'red'
         b2.style.backgroundColor = 'blueviolet'
@@ -89,10 +88,7 @@ function count_skrzydla(count) {
         if (element.classList.contains('active')) {
             element.classList.remove('active')
         }
-    }    
-           
-    
-        
+    }           
     
 }
 
