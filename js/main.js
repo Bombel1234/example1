@@ -131,8 +131,6 @@ function strona_zawiasow(params) {
     
 }
 
-
-
 function slupek(value_slupek) {
     str_slupek = value_slupek
     if (poziom_okucia == 'standart') {
@@ -195,7 +193,6 @@ function input_click() {
 }
 
 function click_button_standart() {
-    poziom_okucia = 'standart'
     btn_standart.classList.add('active')
     if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')) {
         btn_er1.classList.remove('active')
@@ -234,7 +231,6 @@ function click_button_standart() {
     }
 }
 function click_button_er1() {
-    poziom_okucia = 'er1'
     btn_er1.classList.add('active')
     if (btn_standart.classList.contains('active') || btn_er2.classList.contains('active')) {
         btn_standart.classList.remove('active')
@@ -248,7 +244,7 @@ function click_button_er1() {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
                 func_zasuwnica(inp2, h_kl, str_zaw)
-
+                h_kl = ''
                 if (standart == 'ok') {
                     func_plecy_er1(inp2, str_zaw)
                     func_dol_er1(inp1, count_skr)
