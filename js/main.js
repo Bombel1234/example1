@@ -79,6 +79,16 @@ function count_skrzydla(count) {
         zaw.style.display = 'none'
         stl.style.display = 'block'
     }
+    for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
+        const element = document.querySelectorAll('.btn9')[index];
+        if (element.classList.contains('active')) {
+            element.classList.remove('active')
+        }
+    }    
+           
+    
+        
+    
 }
 
 function sposob_open(params) {
@@ -91,6 +101,12 @@ function sposob_open(params) {
         b4.style.backgroundColor = 'red'
         b3.style.backgroundColor = 'blueviolet'
         spos_open = 'rozw'
+    }
+    for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
+        const element = document.querySelectorAll('.btn9')[index];
+        if (element.classList.contains('active')) {
+            element.classList.remove('active')
+        }
     }
 }
 
@@ -105,6 +121,12 @@ function strona_zawiasow(params) {
     else {
         b6.style.backgroundColor = 'red'
         b5.style.backgroundColor = 'blueviolet'
+    }
+    for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
+        const element = document.querySelectorAll('.btn9')[index];
+        if (element.classList.contains('active')) {
+            element.classList.remove('active')
+        }
     }
 }
 
@@ -122,6 +144,12 @@ function slupek(value_slupek) {
             b7.style.backgroundColor = 'blueviolet'
         }
 
+    }
+    for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
+        const element = document.querySelectorAll('.btn9')[index];
+        if (element.classList.contains('active')) {
+            element.classList.remove('active')
+        }
     }
 }
 
@@ -157,10 +185,16 @@ function input_click() {
     else if (btn_er1.classList.contains('active')) {
         btn_er1.classList.remove('active')
     }
+    for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
+        const element = document.querySelectorAll('.btn9')[index];
+        if (element.classList.contains('active')) {
+            element.classList.remove('active')
+        }
+    }
 }
 
 function click_button_standart() {
-
+   
     poziom_okucia = 'standart'
     btn_standart.classList.add('active')
     if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')) {
