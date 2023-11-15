@@ -24,6 +24,10 @@ let b6 = document.getElementById("btn6")
 let b7 = document.getElementById("btn7")
 let b8 = document.getElementById("btn8")
 
+let btn_standart = document.getElementById('btn_standart')
+let btn_er1 = document.getElementById('btn_er1')
+let btn_er2 = document.getElementById('btn_er2')
+
 let data = {
     h_klamka: [140, 190, 283, 433, 533, 583, 1020],
     width_max: 1600,
@@ -48,6 +52,7 @@ window.addEventListener('load', () => {
 function count_skrzydla(count) {
     count_skr = count
     one_or_two = count
+   
     if (count_skr == '1') {
         b1.style.backgroundColor = 'red'
         b2.style.backgroundColor = 'blueviolet'
@@ -108,9 +113,8 @@ function sposob_open(params) {
             element.classList.remove('active')
         }
     }
+    
 }
-
-
 
 function strona_zawiasow(params) {
     str_zaw = params
@@ -128,6 +132,7 @@ function strona_zawiasow(params) {
             element.classList.remove('active')
         }
     }
+    
 }
 
 
@@ -151,6 +156,7 @@ function slupek(value_slupek) {
             element.classList.remove('active')
         }
     }
+    
 }
 
 document.querySelectorAll('.btn9').forEach(button => {
@@ -164,6 +170,7 @@ document.querySelectorAll('.btn9').forEach(button => {
                 element.classList.remove('active')
             }
             button.classList.add('active')
+        
         }
         if (standart != 'ok') {
             delete_all_div()
@@ -174,9 +181,7 @@ document.querySelectorAll('.btn9').forEach(button => {
 });
 
 
-let btn_standart = document.getElementById('btn_standart')
-let btn_er1 = document.getElementById('btn_er1')
-let btn_er2 = document.getElementById('btn_er2')
+
 function input_click() {
     delete_all_div()
     if (btn_standart.classList.contains('active')) {
@@ -194,7 +199,6 @@ function input_click() {
 }
 
 function click_button_standart() {
-   
     poziom_okucia = 'standart'
     btn_standart.classList.add('active')
     if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')) {
@@ -210,6 +214,7 @@ function click_button_standart() {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
                 res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
+                h_kl = ''
             }
             else {
                 alert('nie mamy takich wymiarow')
@@ -247,6 +252,7 @@ function click_button_er1() {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
                 func_zasuwnica(inp2, h_kl, str_zaw)
+
                 if (standart == 'ok') {
                     func_plecy_er1(inp2, str_zaw)
                     func_dol_er1(inp1, count_skr)
