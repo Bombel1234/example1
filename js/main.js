@@ -296,20 +296,19 @@ function click_button_er1() {
     }
 }
 function click_button_er2() {
-    poziom_okucia = 'er2'
-   
+    let inp1 = document.getElementById('inp1').value
+    let inp2 = document.getElementById('inp2').value
+    start = 'start'
+
     if (btn_standart.classList.contains('active') || btn_er1.classList.contains('active')) {
         btn_er1.classList.remove('active')
         btn_standart.classList.remove('active')
     }
-    start = 'start'
-    let inp1 = document.getElementById('inp1').value
-    let inp2 = document.getElementById('inp2').value
 
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
-            if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
-                // res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
+            if (inp2 >= 490 && inp2 <= 2600 && inp1 <= data.width_max) {
+                res_box_x_er2(inp1, inp2, h_kl, str_zaw, count_skr)
                 btn_er2.classList.add('active')
             }
             else {
@@ -322,8 +321,8 @@ function click_button_er2() {
         }
     }
     else if (count_skr == '2' && inp1 != '' && inp2 != '') {
-        if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
-            //res_box_xx(inp1, inp2, str_slupek, spos_open)
+        if (inp2 >= 490 && inp2 <= 2600 && inp1 <= 1600) {
+            res_box_xx_er2(inp1, inp2, str_slupek, spos_open)
         }
         else {
             console.log('nie mamy takich wymiarow')
