@@ -50,9 +50,15 @@ window.addEventListener('load', () => {
 })
 
 function count_skrzydla(count) {
+    delete_all_div()
     count_skr = count
     one_or_two = count
     btn_standart.style.backgroundColor = 'blueviolet'
+    btn_er1.style.backgroundColor = 'blueviolet'
+    btn_er2.style.backgroundColor = 'blueviolet'
+    btn_standart.disabled = false
+    btn_er1.disabled = false
+    btn_er2.disabled = false
     if (count_skr == '1') {
         b1.style.backgroundColor = 'red'
         b2.style.backgroundColor = 'blueviolet'
@@ -111,6 +117,11 @@ function sposob_open(params) {
     }
     delete_all_div()
     btn_standart.style.backgroundColor = 'blueviolet'
+    btn_er1.style.backgroundColor = 'blueviolet'
+    btn_er2.style.backgroundColor = 'blueviolet'
+    btn_standart.disabled = false
+    btn_er1.disabled = false
+    btn_er2.disabled = false
 }
 
 function strona_zawiasow(params) {
@@ -130,6 +141,11 @@ function strona_zawiasow(params) {
         }
     }
     btn_standart.style.backgroundColor = 'blueviolet'
+    btn_er1.style.backgroundColor = 'blueviolet'
+    btn_er2.style.backgroundColor = 'blueviolet'
+    btn_standart.disabled = false
+    btn_er1.disabled = false
+    btn_er2.disabled = false
     delete_all_div()
 }
 
@@ -151,6 +167,11 @@ function slupek(value_slupek) {
         }
     }
     btn_standart.style.backgroundColor = 'blueviolet'
+    btn_er1.style.backgroundColor = 'blueviolet'
+    btn_er2.style.backgroundColor = 'blueviolet'
+    btn_standart.disabled = false
+    btn_er1.disabled = false
+    btn_er2.disabled = false
     delete_all_div()
 }
 
@@ -158,7 +179,8 @@ document.querySelectorAll('.btn9').forEach(button => {
     button.addEventListener('click', function (param) {
         h_kl = button.textContent
         btn_standart.style.backgroundColor = 'blueviolet'
-        btn_er1.classList.remove('active')
+        btn_er1.style.backgroundColor = 'blueviolet'
+        btn_er2.style.backgroundColor = 'blueviolet'
         for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
             const element = document.querySelectorAll('.btn9')[index];
             if (element.classList.contains('active')) {
@@ -180,25 +202,23 @@ document.querySelectorAll('.btn9').forEach(button => {
 function input_click() {
     delete_all_div()
     btn_standart.style.backgroundColor = 'blueviolet'
-    if (btn_standart.classList.contains('active')) {
-        btn_standart.classList.remove('active')
-    }
-    else if (btn_er1.classList.contains('active')) {
-        btn_er1.classList.remove('active')
-    }
+    btn_er1.style.backgroundColor = 'blueviolet'
+    btn_er2.style.backgroundColor = 'blueviolet'
     for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
         const element = document.querySelectorAll('.btn9')[index];
         if (element.classList.contains('active')) {
             element.classList.remove('active')
         }
     }
+    btn_standart.disabled = false
+    btn_er1.disabled = false
+    btn_er2.disabled = false
 }
 
 function click_button_standart() {
     start = 'start'
     let inp1 = document.getElementById('inp1').value
     let inp2 = document.getElementById('inp2').value
-    // btn_standart.classList.add('active')
     if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')) {
         btn_er1.classList.remove('active')
         btn_er2.classList.remove('active')
@@ -210,6 +230,8 @@ function click_button_standart() {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
                 res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
                 h_kl = ''
+                btn_er1.disabled = true
+                btn_er2.disabled = true
             }
             else {
                 alert('nie mamy takich wymiarow')
@@ -225,6 +247,8 @@ function click_button_standart() {
         if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
             res_box_xx(inp1, inp2, str_slupek, spos_open)
             btn_standart.style.backgroundColor = 'red'
+            btn_er1.disabled = true
+            btn_er2.disabled = true
         }
         else {
             console.log('nie mamy takich wymiarow')
@@ -238,7 +262,7 @@ function click_button_er1() {
     start = 'start'
     let inp1 = document.getElementById('inp1').value
     let inp2 = document.getElementById('inp2').value
-    btn_er1.classList.add('active')
+    
     if (btn_standart.classList.contains('active') || btn_er2.classList.contains('active')) {
         btn_standart.classList.remove('active')
         btn_er2.classList.remove('active')
@@ -250,9 +274,12 @@ function click_button_er1() {
                 func_zasuwnica(inp2, h_kl, str_zaw)
                 h_kl = ''
                 if (standart == 'ok') {
+                    btn_er1.style.backgroundColor = 'red'
                     func_plecy_er1(inp2, str_zaw)
                     func_dol_er1(inp1, count_skr)
                     func_gora_er1(inp1, spos_open, count_skr)
+                    btn_standart.disabled = true
+                    btn_er2.disabled = true
                 }
 
             }
@@ -262,12 +289,15 @@ function click_button_er1() {
         }
         else {
             alert('wyberi wysotu klamky')
-            btn_standart.classList.remove('active')
+            btn_er1.classList.remove('active')
         }
     }
     else if (count_skr == '2' && inp1 != '' && inp2 != '') {
         if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
             res_box_xx_er1(inp1, inp2, str_slupek, spos_open, count_skr)
+            btn_standart.style.backgroundColor = 'red'
+            btn_standart.disabled = true
+            btn_er2.disabled = true
         }
         else {
             console.log('nie mamy takich wymiarow')
