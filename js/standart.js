@@ -342,11 +342,10 @@ function func_zasuwnica(height, height_klamka, str_zaw) {
         }
     }
     else {
+        btn_standart.style.backgroundColor = 'blueviolet'
         alert('uwaga: niestandart-- func zasuwnica')
         delete_all_div()
         standart = ''
-        delete_active_button()
-
     }
 }
 function delete_active_button() {
@@ -419,6 +418,7 @@ function func_dol(widht) {
 function res_box_x(widht, height, height_klamka, str_zaw, spos_open) {
     func_zasuwnica(height, height_klamka, str_zaw)
     if (standart == 'ok') {
+        btn_standart.style.backgroundColor = 'red'
         func_plecy(spos_open, height, str_zaw)
         func_gora(widht, spos_open)
         func_dol(widht)
