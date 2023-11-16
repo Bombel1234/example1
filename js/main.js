@@ -48,17 +48,20 @@ window.addEventListener('load', () => {
 
 
 })
-
-function count_skrzydla(count) {
-    delete_all_div()
-    count_skr = count
-    one_or_two = count
+function add_style_button(){
     btn_standart.style.backgroundColor = 'blueviolet'
     btn_er1.style.backgroundColor = 'blueviolet'
     btn_er2.style.backgroundColor = 'blueviolet'
     btn_standart.disabled = false
     btn_er1.disabled = false
     btn_er2.disabled = false
+}
+
+function count_skrzydla(count) {
+    delete_all_div()
+    count_skr = count
+    one_or_two = count
+    add_style_button()
     if (count_skr == '1') {
         b1.style.backgroundColor = 'red'
         b2.style.backgroundColor = 'blueviolet'
@@ -116,12 +119,7 @@ function sposob_open(params) {
         }
     }
     delete_all_div()
-    btn_standart.style.backgroundColor = 'blueviolet'
-    btn_er1.style.backgroundColor = 'blueviolet'
-    btn_er2.style.backgroundColor = 'blueviolet'
-    btn_standart.disabled = false
-    btn_er1.disabled = false
-    btn_er2.disabled = false
+    add_style_button()
 }
 
 function strona_zawiasow(params) {
@@ -140,12 +138,7 @@ function strona_zawiasow(params) {
             element.classList.remove('active')
         }
     }
-    btn_standart.style.backgroundColor = 'blueviolet'
-    btn_er1.style.backgroundColor = 'blueviolet'
-    btn_er2.style.backgroundColor = 'blueviolet'
-    btn_standart.disabled = false
-    btn_er1.disabled = false
-    btn_er2.disabled = false
+    add_style_button()
     delete_all_div()
 }
 
@@ -166,12 +159,7 @@ function slupek(value_slupek) {
             element.classList.remove('active')
         }
     }
-    btn_standart.style.backgroundColor = 'blueviolet'
-    btn_er1.style.backgroundColor = 'blueviolet'
-    btn_er2.style.backgroundColor = 'blueviolet'
-    btn_standart.disabled = false
-    btn_er1.disabled = false
-    btn_er2.disabled = false
+    add_style_button()
     delete_all_div()
 }
 
@@ -295,7 +283,7 @@ function click_button_er1() {
     else if (count_skr == '2' && inp1 != '' && inp2 != '') {
         if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
             res_box_xx_er1(inp1, inp2, str_slupek, spos_open, count_skr)
-            btn_standart.style.backgroundColor = 'red'
+            btn_er1.style.backgroundColor = 'red'
             btn_standart.disabled = true
             btn_er2.disabled = true
         }
@@ -309,7 +297,7 @@ function click_button_er1() {
 }
 function click_button_er2() {
     poziom_okucia = 'er2'
-    btn_er2.classList.add('active')
+   
     if (btn_standart.classList.contains('active') || btn_er1.classList.contains('active')) {
         btn_er1.classList.remove('active')
         btn_standart.classList.remove('active')
@@ -322,6 +310,7 @@ function click_button_er2() {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
                 // res_box_x(inp1, inp2, h_kl, str_zaw, spos_open)
+                btn_er2.classList.add('active')
             }
             else {
                 alert('nie mamy takich wymiarow')
@@ -344,48 +333,5 @@ function click_button_er2() {
         alert('wwedit wymiarun skrzydla')
     }
 }
-function add_style(poziom_okucia, count_skr, str_zaw, str_slupek) {
-    if (poziom_okucia == 'standart') {
-        if (count_skr == '1') {
-            if (spos_open == 'rozw_uch') {
-                if (str_zaw == 'left') {
-                    if (box_left.classList.contains('green')) {
-                        box_left.classList.remove('green')
-                        box_left.classList.add('red')
-                    }
 
-                }
-                else if (str_zaw == 'right') {
-                    if (box_right.classList.contains('green')) {
-                        box_right.classList.remove('green')
-                        box_right.classList.add('red')
-                    }
-                }
-            }
-            if (spos_open == 'rozw') {
-
-            }
-
-        }
-        else if (count_skr == '2') {
-            if (str_slupek == 'left') {
-                if (box_right.classList.contains('green')) {
-                    box_right.classList.remove('green')
-                    box_right.classList.add('red')
-                }
-                box_left.classList.remove('red')
-                box_left.classList.add('green')
-            }
-            else if (str_slupek == 'right') {
-                if (box_left.classList.contains('green')) {
-                    box_left.classList.remove('green')
-                    box_left.classList.add('red')
-                }
-                box_right.classList.remove('red')
-                box_right.classList.add('green')
-            }
-        }
-    }
-
-}
 
