@@ -52,6 +52,7 @@ window.addEventListener('load', () => {
 function count_skrzydla(count) {
     count_skr = count
     one_or_two = count
+    btn_standart.style.backgroundColor = 'blueviolet'
     if (count_skr == '1') {
         b1.style.backgroundColor = 'red'
         b2.style.backgroundColor = 'blueviolet'
@@ -60,7 +61,6 @@ function count_skrzydla(count) {
         stl.style.display = 'none'
         if (start == 'start') {
             if (one_or_two == '1') {
-                alert('wybierz wysokosc klamki')
                 delete_all_div()
                 for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
                     const element = document.querySelectorAll('.btn9')[index];
@@ -88,8 +88,8 @@ function count_skrzydla(count) {
         if (element.classList.contains('active')) {
             element.classList.remove('active')
         }
-    }           
-    
+    }
+
 }
 
 function sposob_open(params) {
@@ -109,7 +109,8 @@ function sposob_open(params) {
             element.classList.remove('active')
         }
     }
-    
+    delete_all_div()
+    btn_standart.style.backgroundColor = 'blueviolet'
 }
 
 function strona_zawiasow(params) {
@@ -128,35 +129,35 @@ function strona_zawiasow(params) {
             element.classList.remove('active')
         }
     }
-    
+    btn_standart.style.backgroundColor = 'blueviolet'
+    delete_all_div()
 }
 
 function slupek(value_slupek) {
     str_slupek = value_slupek
-    if (poziom_okucia == 'standart') {
-        if (str_slupek == 'left') {
-            b7.style.backgroundColor = 'red'
-            b8.style.backgroundColor = 'blueviolet'
-        }
-        else {
-            b8.style.backgroundColor = 'red'
-            b7.style.backgroundColor = 'blueviolet'
-        }
-
+    if (str_slupek == 'left') {
+        b7.style.backgroundColor = 'red'
+        b8.style.backgroundColor = 'blueviolet'
     }
+    else {
+        b8.style.backgroundColor = 'red'
+        b7.style.backgroundColor = 'blueviolet'
+    }
+
     for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
         const element = document.querySelectorAll('.btn9')[index];
         if (element.classList.contains('active')) {
             element.classList.remove('active')
         }
     }
-    
+    btn_standart.style.backgroundColor = 'blueviolet'
+    delete_all_div()
 }
 
 document.querySelectorAll('.btn9').forEach(button => {
     button.addEventListener('click', function (param) {
         h_kl = button.textContent
-        btn_standart.classList.remove('active')
+        btn_standart.style.backgroundColor = 'blueviolet'
         btn_er1.classList.remove('active')
         for (let index = 0; index < document.querySelectorAll('.btn9').length; index++) {
             const element = document.querySelectorAll('.btn9')[index];
@@ -164,7 +165,7 @@ document.querySelectorAll('.btn9').forEach(button => {
                 element.classList.remove('active')
             }
             button.classList.add('active')
-        
+
         }
         if (standart != 'ok') {
             delete_all_div()
@@ -178,6 +179,7 @@ document.querySelectorAll('.btn9').forEach(button => {
 
 function input_click() {
     delete_all_div()
+    btn_standart.style.backgroundColor = 'blueviolet'
     if (btn_standart.classList.contains('active')) {
         btn_standart.classList.remove('active')
     }
@@ -193,15 +195,15 @@ function input_click() {
 }
 
 function click_button_standart() {
-    btn_standart.classList.add('active')
-    if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')) {
-        btn_er1.classList.remove('active')
-        btn_er2.classList.remove('active')
-
-    }
     start = 'start'
     let inp1 = document.getElementById('inp1').value
     let inp2 = document.getElementById('inp2').value
+    // btn_standart.classList.add('active')
+    if (btn_er1.classList.contains('active') || btn_er2.classList.contains('active')) {
+        btn_er1.classList.remove('active')
+        btn_er2.classList.remove('active')
+    }
+    
 
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
@@ -215,12 +217,14 @@ function click_button_standart() {
         }
         else {
             alert('wyberi wysotu klamky')
+            delete_all_div()
             btn_standart.classList.remove('active')
         }
     }
     else if (count_skr == '2' && inp1 != '' && inp2 != '') {
         if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
             res_box_xx(inp1, inp2, str_slupek, spos_open)
+            btn_standart.style.backgroundColor = 'red'
         }
         else {
             console.log('nie mamy takich wymiarow')
@@ -231,14 +235,14 @@ function click_button_standart() {
     }
 }
 function click_button_er1() {
+    start = 'start'
+    let inp1 = document.getElementById('inp1').value
+    let inp2 = document.getElementById('inp2').value
     btn_er1.classList.add('active')
     if (btn_standart.classList.contains('active') || btn_er2.classList.contains('active')) {
         btn_standart.classList.remove('active')
         btn_er2.classList.remove('active')
     }
-    start = 'start'
-    let inp1 = document.getElementById('inp1').value
-    let inp2 = document.getElementById('inp2').value
 
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
