@@ -167,6 +167,7 @@ function res_box_zasuwnica_er2(height, height_klamka, str_zaw) {
     else {
         alert('uwaga: niestandart!!! -- er2')
         standart = ''
+        delete_all_div()
     }
 }
 function res_box_plecy_er2(height, count_skr, str_zaw) {
@@ -491,16 +492,76 @@ function res_box_gora_er2(widht, count_skr) {
     }
 }
 function res_box_dol_er2(widht, count_skr) {
-    if (widht < 78) {
+    if (widht < 490) {
+        if (count_skr == '1') {
+            bot1.innerText = ''
+            bot2.innerText = ''
+            bot3.innerText = ''
+        }
+        else if (count_skr == '2') {
+            bot1.innerText = ''
+            bot2.innerText = ''
+            bot3.innerText = ''
+        }
+    }
+    else if (widht >= 490 && widht < 691) {
         if (count_skr == '1') {
             bot1.innerText = ''
             bot2.innerText = '200'
-            bot2.innerText = ''
+            bot3.innerText = ''
         }
         else if (count_skr == '2') {
             bot1.innerText = '200'
             bot2.innerText = ''
-            bot2.innerText = '200'
+            bot3.innerText = '200'
+        }
+    }
+    else if (widht >= 691 && widht < 891) {
+        if (count_skr == '1') {
+            bot1.innerText = ''
+            bot2.innerText = '400'
+            bot3.innerText = ''
+        }
+        else if (count_skr == '2') {
+            bot1.innerText = '400'
+            bot2.innerText = ''
+            bot3.innerText = '400'
+        }
+    }
+    else if (widht >= 891 && widht < 1091) {
+        if (count_skr == '1') {
+            bot1.innerText = ''
+            bot2.innerText = '600'
+            bot3.innerText = ''
+        }
+        else if (count_skr == '2') {
+            bot1.innerText = '600'
+            bot2.innerText = ''
+            bot3.innerText = '600'
+        }
+    }
+    else if (widht >= 1091 && widht < 1291) {
+        if (count_skr == '1') {
+            bot1.innerText = ''
+            bot2.innerText = '600 200'
+            bot3.innerText = ''
+        }
+        else if (count_skr == '2') {
+            bot1.innerText = '600 200'
+            bot2.innerText = ''
+            bot3.innerText = '600 200'
+        }
+    }
+    else if (widht >= 1291 && widht < 1601) {
+        if (count_skr == '1') {
+            bot1.innerText = ''
+            bot2.innerText = '600 400'
+            bot3.innerText = ''
+        }
+        else if (count_skr == '2') {
+            bot1.innerText = '600 400'
+            bot2.innerText = ''
+            bot3.innerText = '600 400'
         }
     }
 }
@@ -512,5 +573,6 @@ function res_box_dol_er2(widht, count_skr) {
 function res_box_xx_er2(widht, height, str_slupek, spos_open, str_zaw) {
     res_box_gora_er2(widht, count_skr)
     res_box_plecy_er2(height, count_skr, str_zaw)
+    res_box_dol_er2(widht, count_skr)
     btn_er2.style.backgroundColor = 'red'
 }
