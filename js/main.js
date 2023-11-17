@@ -48,7 +48,7 @@ window.addEventListener('load', () => {
 
 
 })
-function add_style_button(){
+function add_style_button() {
     btn_standart.style.backgroundColor = 'blueviolet'
     btn_er1.style.backgroundColor = 'blueviolet'
     btn_er2.style.backgroundColor = 'blueviolet'
@@ -211,8 +211,8 @@ function click_button_standart() {
         btn_er1.classList.remove('active')
         btn_er2.classList.remove('active')
     }
-    
 
+    add_color_box_standart(count_skr, str_zaw, str_slupek, spos_open)
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
             if (inp2 >= data.height_min && inp2 <= data.height_max && inp1 <= data.width_max) {
@@ -250,7 +250,7 @@ function click_button_er1() {
     start = 'start'
     let inp1 = document.getElementById('inp1').value
     let inp2 = document.getElementById('inp2').value
-    
+
     if (btn_standart.classList.contains('active') || btn_er2.classList.contains('active')) {
         btn_standart.classList.remove('active')
         btn_er2.classList.remove('active')
@@ -337,5 +337,44 @@ function click_button_er2() {
         alert('wwedit wymiarun skrzydla')
     }
 }
-
+function add_color_box_standart(count_skr, str_zaw, str_slupek, spos_open) {
+    if (spos_open == 'rozw_uch') {
+        if (count_skr == '1') {
+            if (str_zaw == 'left') {
+                box_left.style.color = 'red'
+                box_right.style.color = 'green'
+            }
+            else if (str_zaw == 'right') {
+                box_left.style.color = 'green'
+                box_right.style.color = 'red'
+            }
+        }
+        else if (count_skr == '2') {
+            if (str_slupek == 'left') {
+                box_left.style.color = 'brown'
+                box_right.style.color = 'red'
+            }
+            else if (str_slupek == 'right') {
+                box_left.style.color = 'red'
+                box_right.style.color = 'brown'
+            }
+        }
+    }
+    if (spos_open == 'rozw'){
+        if (count_skr == '1'){
+            if (str_zaw == 'left'){
+                box_left.style.color = 'brown'
+                box_right.style.color = 'red'
+            }
+            else if (str_zaw == 'right'){
+                box_left.style.color = 'red'
+                box_right.style.color = 'brown'
+            }
+        }
+        else if (count_skr == '2'){
+            box_left.style.color = 'brown'
+            box_right.style.color = 'brown'
+        }
+    }
+}
 
