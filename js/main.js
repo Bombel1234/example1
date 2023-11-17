@@ -309,7 +309,10 @@ function click_button_er2() {
         if (h_kl != '') {
             if (inp2 >= 490 && inp2 <= 2600 && inp1 <= data.width_max) {
                 res_box_x_er2(inp1, inp2, h_kl, str_zaw, count_skr)
+                h_kl = ''
                 btn_er2.classList.add('active')
+                btn_standart.disabled = true
+                btn_er1.disabled = true
             }
             else {
                 alert('nie mamy takich wymiarow')
@@ -322,7 +325,9 @@ function click_button_er2() {
     }
     else if (count_skr == '2' && inp1 != '' && inp2 != '') {
         if (inp2 >= 490 && inp2 <= 2600 && inp1 <= 1600) {
-            res_box_xx_er2(inp1, inp2, str_slupek, spos_open)
+            res_box_xx_er2(inp1, inp2, str_slupek, spos_open, str_zaw)
+            btn_standart.disabled = true
+            btn_er1.disabled = true
         }
         else {
             console.log('nie mamy takich wymiarow')
