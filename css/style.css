@@ -63,6 +63,7 @@ body{
     margin-top: 30px;
     text-align: center;
     font-size: 40px;
+    
 }
 /* box left */
 .box-left{
@@ -71,6 +72,7 @@ body{
     text-align: center;
     margin-top: 30px;
     font-size: 70px;
+    
 }
 #btn1, #btn2, #btn3, #btn4,
 #btn5, #btn6, #btn7, #btn8{
