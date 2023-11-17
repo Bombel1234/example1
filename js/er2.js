@@ -121,32 +121,32 @@ function res_box_zasuwnica_er2(height, height_klamka, str_zaw) {
     else if (height >= 1601 && height < 1801 && h_kl == 1020) {
         standart = 'ok'
         if (str_zaw == 'left') {
-            p1.innerText = ''
-            p2.innerText = '1370'
-            p3.innerText = '1121'
-            p4.innerText = '700'
+            p1.innerText = '1370'
+            p2.innerText = '1121'
+            p3.innerText = '700'
+            p4.innerText = ''
         }
         else if (str_zaw == 'right') {
-            l1.innerText = ''
-            l2.innerText = '1370'
-            l3.innerText = '1121'
-            l4.innerText = '700'
+            l1.innerText = '1370'
+            l2.innerText = '1121'
+            l3.innerText = '700'
+            l4.innerText = ''
         }
 
     }
     else if (height >= 1801 && height < 2001 && h_kl == 1020) {
         standart = 'ok'
         if (str_zaw == 'left') {
-            p1.innerText = ''
-            p2.innerText = '1370'
-            p3.innerText = '1121'
-            p4.innerText = '700'
+            p1.innerText = '1370'
+            p2.innerText = '1121'
+            p3.innerText = '700'
+            p4.innerText = ''
         }
         else if (str_zaw == 'right') {
-            l1.innerText = ''
-            l2.innerText = '1370'
-            l3.innerText = '1121'
-            l4.innerText = '700'
+            l1.innerText = '1370'
+            l2.innerText = '1121'
+            l3.innerText = '700'
+            l4.innerText = ''
         }
     }
     else if (height >= 2001 && height < 2601 && h_kl == 1020) {
