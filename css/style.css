@@ -49,6 +49,8 @@ body{
     margin-top: 30px;
     text-align: center;
     font-size: 50px;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
 }
 .res-gora{
     display: grid;
@@ -63,7 +65,8 @@ body{
     margin-top: 30px;
     text-align: center;
     font-size: 40px;
-    
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
 }
 /* box left */
 .box-left{
@@ -72,7 +75,8 @@ body{
     text-align: center;
     margin-top: 30px;
     font-size: 70px;
-    
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
 }
 #btn1, #btn2, #btn3, #btn4,
 #btn5, #btn6, #btn7, #btn8{
@@ -87,6 +91,12 @@ body{
 .btn9{
     padding: 5px 10px;
 }
+input{
+    width: 100px;
+    height: 40px;
+    font-size: 30px;
+    
+}
 /* box right */
 .box-right{
     display: grid;
@@ -94,6 +104,8 @@ body{
     text-align: center;
     margin-top: 30px;
     font-size: 70px; 
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
 }
 .red{
     color: red;
