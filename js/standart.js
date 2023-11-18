@@ -355,6 +355,7 @@ function delete_active_button() {
     else if (btn_er1.classList.contains('active')) {
         btn_er1.classList.remove('active')
     }
+    
 }
 function func_gora(widht, spos_open) {
     if (spos_open == 'rozw_uch') {
@@ -407,11 +408,13 @@ function func_dol(widht) {
         bot2.innerText = '600'
         bot1.innerText = ''
         bot3.innerText = ''
+        
     }
     else if (widht >= 1401 && widht <= 1600) {
         bot2.innerText = '600 400'
         bot1.innerText = ''
         bot3.innerText = ''
+    
     }
 }
 
