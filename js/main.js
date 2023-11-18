@@ -24,9 +24,11 @@ let b6 = document.getElementById("btn6")
 let b7 = document.getElementById("btn7")
 let b8 = document.getElementById("btn8")
 
+
 let btn_standart = document.getElementById('btn_standart')
 let btn_er1 = document.getElementById('btn_er1')
 let btn_er2 = document.getElementById('btn_er2')
+
 
 let data = {
     h_klamka: [140, 190, 283, 433, 533, 583, 1020],
@@ -209,7 +211,6 @@ function click_button_standart() {
     start = 'start'
     let inp1 = document.getElementById('inp1').value
     let inp2 = document.getElementById('inp2').value
-
     add_color_box_standart(count_skr, str_zaw, str_slupek, spos_open)
     if (count_skr == '1' && inp1 != '' && inp2 != '') {
         if (h_kl != '') {
