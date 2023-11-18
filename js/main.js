@@ -69,6 +69,7 @@ function count_skrzydla(count) {
         klamka.style.display = 'block'
         zaw.style.display = 'block'
         stl.style.display = 'none'
+
         if (start == 'start') {
             if (one_or_two == '1') {
                 delete_all_div()
