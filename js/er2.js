@@ -462,8 +462,6 @@ function res_box_plecy_er2(height, count_skr, str_zaw) {
 
 
 
-
-
 function res_box_gora_er2(widht, count_skr) {
 
     if (widht < 801) {
